@@ -1,6 +1,7 @@
 import ExpenseItem from "./components/ExpenseItem";
 import "./components/expenses.css";
 import Card from "./components/Card";
+import ExpenseForm from "./components/ExpenseForm";
 
 function App() {
   const expenses = [
@@ -35,17 +36,25 @@ function App() {
   ];
 
   return (
-    <Card className="expenses">
-      <h2>Expense Tracker</h2>
-      {expenses.map((expense) => (
-        <ExpenseItem
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-          location={expense.LocationOfExpenditure}
+    <div>
+      <Card className="expenses">
+        <h2>Expense Tracker</h2>
+        <ExpenseForm
+          title={expenses.title}
+          amount={expenses.amount}
+          date={expenses.date}
+          location={expenses.LocationOfExpenditure}
         />
-      ))}
-    </Card>
+        {expenses.map((expense) => (
+          <ExpenseItem
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+            location={expense.LocationOfExpenditure}
+          />
+        ))}
+      </Card>
+    </div>
   );
 }
 
