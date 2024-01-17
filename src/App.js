@@ -1,4 +1,6 @@
 import ExpenseItem from "./components/ExpenseItem";
+import "./components/expenses.css";
+import Card from "./components/Card";
 
 function App() {
   const expenses = [
@@ -33,8 +35,8 @@ function App() {
   ];
 
   return (
-    <div>
-      <h2>Let's get started!</h2>
+    <Card className="expenses">
+      <h2>Expense Tracker</h2>
       {expenses.map((expense) => (
         <ExpenseItem
           title={expense.title}
@@ -43,7 +45,7 @@ function App() {
           location={expense.LocationOfExpenditure}
         />
       ))}
-    </div>
+    </Card>
   );
 }
 
